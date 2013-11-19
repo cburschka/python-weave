@@ -1,0 +1,31 @@
+#\DeclareLyXModule[pyweave->latex]{PyWeave}
+#DescriptionBegin
+#Embed Python code in LyX.
+#DescriptionEnd
+#Category: literate
+
+Format 36
+OutputType             literate
+OutputFormat           pyweave
+
+Style Chunk
+	Category              PyWeave
+	LatexType             Paragraph
+	LatexName             dummy
+	Margin                static
+	Align                 Left
+	AlignPossible         Block, Left, Right, Center
+	TopSep                0.7
+	BottomSep             0.7
+	NewLine               0
+	FreeSpacing           1
+	PassThru              1
+	ParbreakIsNewline     1
+	Spellcheck	      0
+	## What is LabelType used for?
+	LabelType             Static
+	TextFont
+	  Color               latex
+	  Family              Typewriter
+	EndFont
+End
