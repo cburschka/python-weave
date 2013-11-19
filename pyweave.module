@@ -1,4 +1,4 @@
-#\DeclareLyXModule[pyweave->latex]{PyWeave}
+#\DeclareLyXModule[pyweave->latex,fancyvrb.sty,color]{PyWeave}
 #DescriptionBegin
 #Embed Python code in LyX.
 #DescriptionEnd
@@ -8,24 +8,62 @@ Format 36
 OutputType             literate
 OutputFormat           pyweave
 
-Style Chunk
-	Category              PyWeave
-	LatexType             Paragraph
-	LatexName             dummy
-	Margin                static
-	Align                 Left
-	AlignPossible         Block, Left, Right, Center
-	TopSep                0.7
-	BottomSep             0.7
-	NewLine               0
-	FreeSpacing           1
+Input litinsets.inc
+
+Counter chunk
+    InitialValue 2
+End
+
+OutputType             literate
+OutputFormat           pyweave
+
+ClassOptions
+	Other          "noae"
+End
+
+
+InsetLayout "Flex:Python expression"
+	LabelString           "Python expr"
+	LatexType             Command
+	LaTexName             Pyexpr
+	LyXType               Custom
+	Decoration            Conglomerate
+	Font
+	  Color               latex
+	  Family              typewriter
+	EndFont
+	LabelFont
+	  Color               latex
+	  Size                Small
+	EndFont
+	MultiPar              false
 	PassThru              1
 	ParbreakIsNewline     1
 	Spellcheck	      0
-	## What is LabelType used for?
-	LabelType             Static
-	TextFont
-	  Color               latex
-	  Family              Typewriter
-	EndFont
+	FreeSpacing           true
+	ForceLTR              true
 End
+
+
+InsetLayout "Flex:Python Input File"
+	LabelString           "Python Input File"
+	LatexType             Command
+	LaTexName             PythonInput
+	LyXType               Custom
+	Decoration            Classic
+	Font
+	  Color               latex
+	  Family              typewriter
+	EndFont
+	LabelFont
+	  Color               latex
+	  Size                Small
+	EndFont
+	MultiPar              false
+	PassThru              1
+	ParbreakIsNewline     1
+	Spellcheck	      0
+	FreeSpacing           true
+	ForceLTR              true
+End
+
