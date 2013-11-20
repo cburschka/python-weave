@@ -1,4 +1,4 @@
-#\DeclareLyXModule[pyweave->latex,fancyvrb.sty,color]{PyWeave}
+#\DeclareLyXModule[pyweave->latex,fancyvrb.sty,color.sty]{PyWeave}
 #DescriptionBegin
 #Embed Python code in LyX.
 #DescriptionEnd

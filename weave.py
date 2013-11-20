@@ -14,7 +14,7 @@ class environment:
         self.globals = {}
     def exe(self, code):
         self.out,sys.stdout = sys.stdout,self.out
-        exec(code, self.filename, self.globals)
+        exec(code, self.globals)
         self.out,sys.stdout = sys.stdout,self.out
 
 # Allow an arbitrary "global" indentation per chunk.
