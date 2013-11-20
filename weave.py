@@ -30,8 +30,7 @@ text = open(i).read()
 open('/home/christoph/pylog.txt', 'w').write(text)
 out = open(o, 'w')
 env = environment(out, i)
-chunks = re.split('\n<<>>\n(@echo\n)?(.*?)\n@\n', text, flags=re.DOTALL)
-
+chunks = re.split('\n<<>>=\n(@echo\n)?(.*?)\n@\n', text, flags=re.DOTALL)
 out.write(chunks[0])
 for i in range(2, len(chunks)-1, 3):
     if chunks[i-1]:
