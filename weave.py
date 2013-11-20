@@ -27,6 +27,7 @@ def fix_indent(s):
 
 i,o,enc,cwd = sys.argv[1:]
 text = open(i).read()
+open('/home/christoph/pylog.txt', 'w').write(text)
 out = open(o, 'w')
 env = environment(out, i)
 chunks = re.split('\n<<>>\n(@echo\n)?(.*?)\n@\n', text, flags=re.DOTALL)
